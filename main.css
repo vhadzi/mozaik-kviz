@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+}
+/*
+ * Formatting the header area
+ */
+header {
+  background-color: #DFB887;
+  height: 65px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+}
+header h1.logo {
+  margin: 0;
+  font-size: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  text-align:center;
+}
+header h1.logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/*
+ * Centering the body content
+ */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #999;
+}
+
+
+ .grid {    width:88vh;
+            height:88vh;
+            margin:0px auto;
+            background-image:url("slika.png");
+            background-color:black;
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+            display: grid;
+            grid-template-columns: repeat(4, 22vh);
+            grid-template-rows: repeat(4, 22vh);
+            gap: 1px;
+        }
+        .cell {
+            background-color: #E6E6FA;
+             -webkit-border-radius: 6px;
+             -moz-border-radius: 6px;
+             border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .revealed {
+            background: none;
+        }
