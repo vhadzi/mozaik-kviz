@@ -7,7 +7,6 @@
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
     <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.global.min.css"/>
     <link rel="stylesheet" href="main.css"/>
 
     <style>
@@ -28,33 +27,37 @@
      
      
         <div class="grid">
-            <div class="cell" data-id="1"></div>
-            <div class="cell" data-id="2"></div>
-            <div class="cell" data-id="3"></div>
-            <div class="cell" data-id="4"></div>
-            <div class="cell" data-id="5"></div>
-            <div class="cell" data-id="6"></div>
-            <div class="cell" data-id="7"></div>
-            <div class="cell" data-id="8"></div>
-            <div class="cell" data-id="9"></div>
-            <div class="cell" data-id="10"></div>
-            <div class="cell" data-id="11"></div>
-            <div class="cell" data-id="12"></div>
-            <div class="cell" data-id="13"></div>
-            <div class="cell" data-id="14"></div>
-            <div class="cell" data-id="15"></div>
-            <div class="cell" data-id="16"></div>
+        <!-- dodati tekst pitanja u okviru data- argumenta... -->
+            <div class="cell" data-pitanje="1">1</div>
+            <div class="cell" data-pitanje="2">2</div>
+            <div class="cell" data-pitanje="3">3</div>
+            <div class="cell" data-pitanje="4">4</div>
+            <div class="cell" data-pitanje="5">5</div>
+            <div class="cell" data-pitanje="6">6</div>
+            <div class="cell" data-pitanje="7">7</div>
+            <div class="cell" data-pitanje="8">8</div>
+            <div class="cell" data-pitanje="9">9</div>
+            <div class="cell" data-pitanje="10">10</div>
+            <div class="cell" data-pitanje="11">11</div>
+            <div class="cell" data-pitanje="12">12</div>
+            <div class="cell" data-pitanje="13">13</div>
+            <div class="cell" data-pitanje="14">14</div>
+            <div class="cell" data-pitanje="15">15</div>
+            <div class="cell" data-pitanje="16">16</div>
 
         </div>
     </div>
  <script>
-        const cells = document.querySelectorAll('.cell');
+        const cells = document.querySelectorAll('.cell'); 
         cells.forEach(cell => {
-            cell.addEventListener('click', () => {
-                const isCorrect = confirm("Odgovorite na pitanje: Da li je tačno?"); // Simulacija pitanja
+            cell.addEventListener('click', ()=> {
+                const tekst=cell.getAttribute("data-pitanje");
+                const isCorrect = confirm("Odgovorite na pitanje:"+tekst); // Simulacija pitanja
                 if (isCorrect) {
                     cell.classList.add('revealed');
+                    cell.textContent="";
                     cell.style.background = `url('slika.jpg')`;
+                    
                 }
             });
         });
