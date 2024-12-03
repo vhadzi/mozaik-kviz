@@ -28,22 +28,22 @@
      
         <div class="grid">
         <!-- dodati tekst pitanja u okviru data- argumenta... -->
-            <div class="cell" data-pitanje="1">1</div>
-            <div class="cell" data-pitanje="2">2</div>
-            <div class="cell" data-pitanje="3">3</div>
-            <div class="cell" data-pitanje="4">4</div>
-            <div class="cell" data-pitanje="5">5</div>
-            <div class="cell" data-pitanje="6">6</div>
-            <div class="cell" data-pitanje="7">7</div>
-            <div class="cell" data-pitanje="8">8</div>
-            <div class="cell" data-pitanje="9">9</div>
-            <div class="cell" data-pitanje="10">10</div>
-            <div class="cell" data-pitanje="11">11</div>
-            <div class="cell" data-pitanje="12">12</div>
-            <div class="cell" data-pitanje="13">13</div>
-            <div class="cell" data-pitanje="14">14</div>
-            <div class="cell" data-pitanje="15">15</div>
-            <div class="cell" data-pitanje="16">16</div>
+            <div class="cell" data-pitanje="1. У ком веку је живео Аристотел? (3 поена)">1</div>
+            <div class="cell" data-pitanje="2. Tренутни председник француске је? (3 поена)">2</div>
+            <div class="cell" data-pitanje="3. Из ког града су Битлси? (3 поена)">3</div>
+            <div class="cell" data-pitanje="4.Како се зове стилска фигура која подразумева понављање почетних и завршних речи у низу стихова или реченица? (3 поена) ">4</div>
+            <div class="cell" data-pitanje="5. Како се зове природан број који има тачно два различита делиоца? (3 поена)">5</div>
+            <div class="cell" data-pitanje="6. Одреди следећи члан низа 1, 7, 19, 43, 91, ... (5 поена)">6</div>
+            <div class="cell" data-pitanje="7. Која афричка држава на застави има пушку калашњиков? (5 поена)">7</div>
+            <div class="cell" data-pitanje="8. Са којом земљом Србија има најдужу границу? (3 поена)">8</div>
+            <div class="cell" data-pitanje="9. Како се зове кућа која је у потпуности направљена од леда? (3 поена)">9</div>
+            <div class="cell" data-pitanje="10. У ком граду је седиште европске уније? (5 поена)">10</div>
+            <div class="cell" data-pitanje="11. Михајло Петровић Алас био је познати српски...? (5 поена)">11</div>
+            <div class="cell" data-pitanje="12. Коју државу чине острва Хоншу, Кјушу, Шикоку и Хокаидо (3 поена)">12</div>
+            <div class="cell" data-pitanje="13. Како гласи име и претиме последњег руског цара? (3 поена)">13</div>
+            <div class="cell" data-pitanje="14. Која се јединица користи за електромагнетну индукцију? (3 поена)">14</div>
+            <div class="cell" data-pitanje="15. Ко изводи песму 'Прича о Васи Ладачком'? (3 поена)">15</div>
+            <div class="cell" data-pitanje="16. Како се зове највиши врх Србије? (3 поена)">16</div>
 
         </div>
     </div>
@@ -52,8 +52,14 @@
         cells.forEach(cell => {
             cell.addEventListener('click', ()=> {
                 const tekst=cell.getAttribute("data-pitanje");
-                const isCorrect = confirm("Odgovorite na pitanje:"+tekst); // Simulacija pitanja
-                if (isCorrect) {
+                const isRevealed =cell.classList.contains('revealed');
+
+                if (isRevealed) {
+                    cell.classList.remove('revealed');
+                    cell.style.backgroundColor= '#E6E6FA';
+                    cell.textContent=Number(tekst.slice(0,3));
+                }   
+                else if (confirm(tekst)) {
                     cell.classList.add('revealed');
                     cell.textContent="";
                     cell.style.background = `url('slika.jpg')`;
