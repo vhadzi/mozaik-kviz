@@ -8,8 +8,8 @@ body {
  * Formatting the header area
  */
 header {
-  background-color: #DFB887;
-  height: 65px;
+  background-color: #00aad4;
+  height: 80px;
   width: 100%;
   opacity: .9;
   margin-bottom: 10px;
@@ -24,6 +24,15 @@ header h1.logo {
 header h1.logo:hover {
   color: #fff;
   text-decoration: none;
+}
+footer {
+  background-color: #00aad4;
+  margin-top:12px;
+  width: 100%;
+  opacity: .9;
+  text-align:center;
+  color:white;
+ 
 }
 /*
  * Centering the body content
@@ -49,8 +58,8 @@ h3 {
 }
 
 
- .grid {    width:88vh;
-            height:88vh;
+ .grid {    width:84vh;
+            height:84vh;
             margin:0px auto;
             background-image:url("slika.png");
             background-color:black;
@@ -58,8 +67,8 @@ h3 {
             background-repeat: no-repeat; /* Do not repeat the image */
             background-size: cover; /* Resize the background image to cover the entire container */
             display: grid;
-            grid-template-columns: repeat(4, 22vh);
-            grid-template-rows: repeat(4, 22vh);
+            grid-template-columns: repeat(4, 21vh);
+            grid-template-rows: repeat(4, 21vh);
             gap: 1px;
         }
         .cell {
